@@ -1,0 +1,13 @@
+<h1> All Articles </h1>
+
+<ul id="articles">
+<%@articles.each do |article|%>
+<li>
+<!-- < article.title > needs % and = to work-->
+<%= link_to article.title, article_path(article), class: 'article_title', id: "article_#{article.id}" %> <!-- link_to text, route helper; hyperlinks text-->
+</li>
+<%end%>
+</ul>
+<%= link_to "New Article", new_article_path, class: 'new_article' %>
+<!-- # the 'erb' tags here let you insert ruby code into html
+# the equals sign displays the output -->
