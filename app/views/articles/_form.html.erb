@@ -1,0 +1,19 @@
+<%= form_for(@article) do |f| %> <!-- form_for is a rails helper that takes @article and does a block through the form fields -->
+<ul>
+  <% @article.errors.full_messages.each do |error| %>
+  <li><%=error%></li>
+  <% end %>
+</ul>
+
+<p>
+  <%= f.label :title %> <br /> <!--f refers to form; this create text while the next line creates a sinle line field -->
+  <%= f.text_field :title %>
+</p>
+<p>
+  <%= f.label :body %> <br />
+  <%= f.text_area :body %> <!-- multiline text box -->
+</p>
+<p>
+  <%= f.submit %> <!-- creates button labeled Create -->
+</p>
+<% end %>
